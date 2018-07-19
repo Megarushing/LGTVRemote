@@ -2,7 +2,7 @@
 
 LG TV Remote is an iOS App capable of remotely controlling old LG Smart TVs via network connection.
 
-It is compatible with models LV550x,LW550x,LW550x,LW650x,LW770x,LW980x
+It is compatible with models LV550x,LW550x,LW570x,LW650x,LW770x,LW980x
 
 This app was built in Python with [Pythonista for iOS](http://omz-software.com/pythonista) based on [LGCommander](https://github.com/ubaransel/lgcommander) project by ubaransel
 
