@@ -1,86 +1,115 @@
-# Xcode Template for Pythonista
+# LG TV Remote for 2011 TVs
 
-This template allows you to package Python 2 scripts written in [Pythonista for iOS](http://omz-software.com/pythonista) as standalone apps that can be built using Xcode.  This template does not currently support Python 3.
+LG TV Remote is an iOS App capable of remotely controlling old LG Smart TVs via network connection.
 
-## Using the Template
+It is compatible with models LV550x,LW550x,LW550x,LW650x,LW770x,LW980x
 
-First off, you obviously need to download Xcode [from the App Store](https://itunes.apple.com/en/app/xcode/id497799835?mt=12), if you haven't already.
+This app was built in Python with [Pythonista for iOS](http://omz-software.com/pythonista) based on [LGCommander](https://github.com/ubaransel/lgcommander) project by ubaransel
 
-This is enough to build your app for the iOS simulator, but to get it running on an actual device, you need at least an Apple ID (for running on your own device) or a paid Developer Program membership (for distributing through the App Store). The details of how to set up code signing and provisioning profiles are beyond the scope of this document, but they're not different from what you need to do to build any other iOS app, and you can find plenty of information about the process online.
+## List of Useful Control Codes
 
-The template just runs a default "Hello World" script by default. To make it run your own script, just put it in the "Script" folder of the template, and rename it to "main.py" if necessary. You can also put additional resources there, e.g. pyui files, images, etc.
+### Menus
+	status_bar = 35
+	quick_menu = 69
+	home_menu = 67
+	premium_menu = 89
+	installation_menu = 207
+	factory_advanced_menu1 = 251
+	factory_advanced_menu2 = 255
 
-## Customization
+### Power Control
+	power_off = 8
+	sleep_timer = 14
 
-### Changing the App's Name, Icon, and Launch Screen
+### Navigation
+	left = 7
+	right = 6
+	up = 64
+	down = 65
+	select = 68
+	back = 40
+	exit = 91
+	red = 114
+	green = 113
+	yellow = 99
+	blue = 97
 
-Before changing the app's name and icon, you should usually change its *bundle identifier*, so that it is unique:
+### Keypad
+	"0" = 16
+	"1" = 17
+	"2" = 18
+	"3" = 19
+	"4" = 20
+	"5" = 21
+	"6" = 22
+	"7" = 23
+	"8" = 24
+	"9" = 25
+	underscore = 76
 
-Open the Xcode project, and select the first entry in the project navigator (PythonistaAppTemplate). Select the "My App" target in the left pane, and enter something unique in the "Bundle Identifier" field. The bundle identifier should be in "reverse domain" notation, e.g. something like com.mycompany.myapp.
+### Playback Controls
+	play = 176
+	pause = 186
+	fast_forward = 142
+	rewind = 143
+	stop = 177
+	record = 189
 
-To change the name that is shown below the icon on the homescreen, you can simply rename the target ("My App" by default) by double-clicking on it.
+### Input Controls
+	tv_radio = 15
+	simplink = 126
+	input = 11
+	component_rgb_hdmi = 152
+	component = 191
+	rgb = 213
+	hdmi = 198
+	hdmi1 = 206
+	hdmi2 = 204
+	hdmi3 = 233
+	hdmi4 = 218
+	av1 = 90
+	av2 = 208
+	av3 = 209
+	usb = 124
+	slideshow_usb1 = 238
+	slideshow_usb2 = 168
 
-To change the app's icon, select Assets.xcassets in the project navigator, then select the "AppIcon" image set and replace the various icon sizes via drag'n'drop from the Finder. Not all the icon sizes are strictly necessary (the Spotlight and Settings icon sizes are optional). If you don't have your own icon in these sizes, you should remove the default icons though.
+### TV Controls
+	channel_up = 0
+	channel_down = 1
+	channel_back = 26
+	favorites = 30
+	teletext = 32
+	t_opt = 33
+	channel_list = 83
+	greyed_out_add_button? = 85
+	guide = 169
+	info = 170
+	live_tv = 158
 
-The app's launch screen is shown during its launch from the home screen (as a placeholder while the app is loading). It is defined in LaunchScreen.storyboard, and you can edit it directly in Xcode, using its Interface Builder.
+### Picture Controls
+	av_mode = 48
+	picture_mode = 77
+	ratio = 121
+	ratio_4_3 = 118
+	ratio_16_9 = 119
+	energy_saving = 149
+	cinema_zoom = 175
+	"3d" = 220
+	factory_picture_check = 252
 
-### Split Screen, Orientations, and Status Bar
+### Audio Controls
+	volume_up = 2
+	volume_down = 3
+	mute = 9
+	audio_language = 10
+	sound_mode = 82
+	factory_sound_check = 253
+	subtitle_language = 57
+	audio_description = 145
 
-When you run the app on an iPad, it will support split-screen multitasking by default.
+## Pythonista Template
 
-You may want to turn this off if
+This code contains a (very) stripped down version of Pythonista App Template, with only the essential to run it with requests lib, this may be useful for learning what is necessary to keep into the framework and what isn't
 
-* Your custom UI isn't (yet) prepared to adapt to various sizes.
-* You've written a game (or something similar) that always requires the full screen.
-* You want to lock the orientation of your UI/scene to portrait or landscape – the `orientations` argument for `ui.View.present()` and `scene.run()` is ignored if split-screen support is enabled, and you cannot prevent auto-rotation.
 
-If any of the above applies to you, simply select the target ("My App" by default) and activate the "Requires full screen" checkbox in the "General" tab.
-
-Right above that checkbox are controls for changing the style of the status bar (black/white) and for hiding it entirely.
-
-### Changing Colors
-
-After the app has launched, it shows a white background on which console output etc. will appear.
-
-If your script has its own UI, and doesn't actually rely on console output, you may at least want to change the background color of this view, but you can also change the console's default text colors.
-
-To adjust these colors, you have to edit `PAAppViewController.m`. The code is Objective-C, but even if you don't know anything about that, it should be easy to adjust the RGB values. Just keep in mind that the range for each value is 0.0 to 1.0 (and not 0 to 255 as you may expect).
-
-### Debug Controls
-
-By default, the console output area also contains "Run" and "Clear" buttons. The "Run" button simply restarts your main script after it has finished running. This can be useful for console-based scripts or during development because you don't have to restart the entire app to run your script again. For games, UI-based scripts, and for distribution, you may want to hide these buttons though. To do that, simply set the `showButtons` variable in `PAAppViewController.m` to `NO`.
-
-## Special Considerations for `scene` and `ui` Scripts
-
-When you run a scene or present a UI in Pythonista, the interface contains a *Close* button by default, so that you can continue editing your code without restarting the entire app.
-
-In a standalone app, you typically don't want these buttons though, so there are ways to get rid of them:
-
-When you present a `ui.View`, you can pass `hide_title_bar=True` to the `present()` method. You may also want to pass `animated=False` in a standalone app, which suppresses the sliding animation.
-
-For presenting a `Scene`, don't use the `run` function. Instead, embed a `SceneView` in a regular `ui.View`, and present that using `hide_title_bar=False`. Example:
-
-	from scene import *
-	import ui
-
-	class MyScene (Scene):
-		pass
-
-	my_scene = MyScene()
-	# Instead of...
-	# run(MyScene())
-
-	# ..use:
-	main_view = ui.View()
-	scene_view = SceneView(frame=main_view.bounds, flex='WH')
-	main_view.add_subview(scene_view)
-	scene_view.scene = my_scene
-	main_view.present(hide_title_bar=True, animated=False)
-
-## Reducing the Size of the App
-
-When you build your project from the unmodified template, the resulting app will be quite large, but there are various ways to reduce its footprint easily.
-
-* If your script doesn't use all of Pythonista's built-in images and sound effects, you can remove those you don't need from `PythonistaKit.framework`. The corresponding files are located in the *Media* directory.
-
-* You can remove packages and modules you don't need from the standard library in `PythonistaKit.framework/pylib` and `PythonistaKit.framework/pylib_ext`. For example, by removing `matplotlib` and `sympy` from `pylib_ext`, you can save about 20 MB.
