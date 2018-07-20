@@ -18,27 +18,29 @@ from objc_util import *
 NSUserDefaults = ObjCClass('NSUserDefaults')
 
 #grab pairing key
-lgtv["pairingKey"] = str(NSUserDefaults.standardUserDefaults().stringForKey_("code"))
+lgtv["pairingKey"] = str(NSUserDefaults.standardUserDefaults().stringForKey_("code")).upper()
 if lgtv["pairingKey"] == "None":
 	lgtv["pairingKey"] = "TVCODE"
 
 def send_custom_code(sender):
     dismiss()
     try:
-        handleCommand(v["customCommand"].text)
+        if handleCommand(v["customCommand"].text) != "OK":
+            start_session()
     except Exception as e:
         v["messageLabel"].text = "Error: {}".format(e)
 
 def send_code(sender):
     dismiss()
     try:
-        handleCommand(str(sender.code))
+        if handleCommand(str(sender.code)) != "OK":
+            start_session()
     except Exception as e:
         v["messageLabel"].text = "Error: {}".format(e)
 
 def textfield_action(sender):
     if sender.name == "codeField":
-        code = sender.text
+        code = sender.text.upper()
         lgtv["pairingKey"] = code
         NSUserDefaults.standardUserDefaults().setObject_forKey_(code,"code")
         start_session()
@@ -128,7 +130,7 @@ def start_session():
     try:
         lgtv["session"] = getSessionid()
     except Exception as e:
-        v["messageLabel"].text = "TV connection error"
+        v["messageLabel"].text = "TV connection error: {}".format(e)
         return False
     if lgtv["session"] == "" :
         getPairingKey()
