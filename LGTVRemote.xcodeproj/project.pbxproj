@@ -35,7 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7F918BB71C721C1F0064E744 /* My App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F918BB71C721C1F0064E744 /* LGTV Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LGTV Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F918BBB1C721C1F0064E744 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F918BBD1C721C1F0064E744 /* PAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAAppDelegate.h; sourceTree = "<group>"; };
 		7F918BBE1C721C1F0064E744 /* PAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAAppDelegate.m; sourceTree = "<group>"; };
@@ -50,6 +50,7 @@
 		7F918C411C729E6B0064E744 /* OMTextEditor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OMTextEditor.xcassets; sourceTree = "<group>"; };
 		7F918C451C7393A40064E744 /* Script */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Script; sourceTree = "<group>"; };
 		7FA4BBC91C7664E8001C9481 /* PythonistaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PythonistaKit.framework; sourceTree = "<group>"; };
+		A0D70F30210276DF001BDBA7 /* My App copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "My App copy-Info.plist"; path = "/Users/megarushing/Desktop/Projects/iOS/LGTVRemote/My App copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +72,14 @@
 				7F918C451C7393A40064E744 /* Script */,
 				7F918BB91C721C1F0064E744 /* LGTVRemote */,
 				7F918BB81C721C1F0064E744 /* Products */,
+				A0D70F30210276DF001BDBA7 /* My App copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		7F918BB81C721C1F0064E744 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7F918BB71C721C1F0064E744 /* My App.app */,
+				7F918BB71C721C1F0064E744 /* LGTV Remote.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,9 +115,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7F918BB61C721C1F0064E744 /* My App */ = {
+		7F918BB61C721C1F0064E744 /* LGTV Remote */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F918BCE1C721C1F0064E744 /* Build configuration list for PBXNativeTarget "My App" */;
+			buildConfigurationList = 7F918BCE1C721C1F0064E744 /* Build configuration list for PBXNativeTarget "LGTV Remote" */;
 			buildPhases = (
 				7FA4BBC81C76285E001C9481 /* ShellScript */,
 				7F918BB31C721C1F0064E744 /* Sources */,
@@ -127,9 +129,9 @@
 			);
 			dependencies = (
 			);
-			name = "My App";
+			name = "LGTV Remote";
 			productName = LGTVRemote;
-			productReference = 7F918BB71C721C1F0064E744 /* My App.app */;
+			productReference = 7F918BB71C721C1F0064E744 /* LGTV Remote.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +162,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7F918BB61C721C1F0064E744 /* My App */,
+				7F918BB61C721C1F0064E744 /* LGTV Remote */,
 			);
 		};
 /* End PBXProject section */
@@ -358,7 +360,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F918BCE1C721C1F0064E744 /* Build configuration list for PBXNativeTarget "My App" */ = {
+		7F918BCE1C721C1F0064E744 /* Build configuration list for PBXNativeTarget "LGTV Remote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F918BCF1C721C1F0064E744 /* Debug */,
