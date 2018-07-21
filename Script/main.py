@@ -19,7 +19,7 @@ NSUserDefaults = ObjCClass('NSUserDefaults')
 
 #grab pairing key
 lgtv["pairingKey"] = str(NSUserDefaults.standardUserDefaults().stringForKey_("code")).upper()
-if lgtv["pairingKey"] == "None":
+if lgtv["pairingKey"] == "NONE":
 	lgtv["pairingKey"] = "TVCODE"
 
 def send_custom_code(sender):
