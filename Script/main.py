@@ -139,7 +139,7 @@ def dismiss():
 
 #ui configs
 v = ui.load_view('lgtv')
-v.present(style='sheet',animated=False,orientations=('portrait'),hide_title_bar=False,title_bar_color='black',title_color='white')
+v.present(style='sheet',animated=False,orientations=('portrait'),hide_title_bar=True,title_bar_color='black',title_color='white')
 v["backgroundImage"].image = ui.Image.named("bg.png")
 v["codeField"].action = textfield_action
 v["codeField"].text = lgtv["pairingKey"]
