@@ -27,6 +27,7 @@ def send_custom_code(sender):
     try:
         if handleCommand(v["customCommand"].text) != "OK":
             start_session()
+            handleCommand(v["customCommand"].text)
     except Exception as e:
         v["messageLabel"].text = "Error: {}".format(e)
 
@@ -35,6 +36,7 @@ def send_code(sender):
     try:
         if handleCommand(str(sender.code)) != "OK":
             start_session()
+            handleCommand(str(sender.code))
     except Exception as e:
         v["messageLabel"].text = "Error: {}".format(e)
 

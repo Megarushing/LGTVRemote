@@ -110,6 +110,6 @@ This app was built in Python with [Pythonista for iOS](http://omz-software.com/p
 
 ## Pythonista Template
 
-This code contains a (very) stripped down version of Pythonista App Template, with only the essential to run it with requests lib, this may be useful for learning what is necessary to keep into the framework and what isn't
+This code contains a (very) stripped down version of Pythonista App Template, with only the essential to run it with requests lib, this may be useful for learning what is really necessary to keep into the framework when releasing an App.
 
 
